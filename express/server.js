@@ -23,7 +23,6 @@ const bodyParser = require('body-parser');
 const router = express.Router();
 var routes = require('./routes');
 
-routes(app);
 
 app.use(bodyParser.json());
 app.use('/.netlify/functions/server', router);  // path must route to lambda
