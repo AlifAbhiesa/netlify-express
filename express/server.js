@@ -20,15 +20,9 @@ const serverless = require('serverless-http');
 const app = express();
 const bodyParser = require('body-parser');
 
-const router = require('./controller');
-
-var cors = require('cors');
-app.use(cors());
-
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-
+const router = express.Router();
 var routes = require('./routes');
+
 routes(app);
 
 app.use(bodyParser.json());
